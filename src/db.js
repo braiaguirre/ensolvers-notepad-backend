@@ -6,7 +6,7 @@ const noteModel = require('./models/noteModel');
 const tagModel = require('./models/tagModel');
 
 const sequelize = new Sequelize(
-    `postgres://${ DB_USER }:${ DB_PASSWORD }@${ DB_HOST }/${ DB_NAME }?ssl=true`,
+    `${POSTGRES_URL_NON_POOLING}?sslmode=require`,
     { logging: false, native: false });
 
 noteModel(sequelize);
